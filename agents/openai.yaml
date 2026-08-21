@@ -1,0 +1,6 @@
+interface:
+  display_name: "Generate Project Subagents"
+  short_description: "Generate project agents and delegation policy"
+  default_prompt: "Use $generate-project-subagents to generate a minimal set of project-scoped custom agents from this repository's conventions and install the automatic delegation policy unless TOML-only output is requested."
+policy:
+  allow_implicit_invocation: true
