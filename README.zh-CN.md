@@ -1,6 +1,17 @@
-# 自动生成项目子 Agents
+<p align="center">
+  <img src="assets/project-subagents-logo.png" alt="自动生成项目子 Agents Logo" width="220" />
+</p>
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+<h1 align="center">自动生成项目子 Agents</h1>
+
+<p align="center">
+  <strong>From project to agents.</strong><br />
+  从项目到 Agents，一步生成。
+</p>
+
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a>
+</p>
 
 `generate-project-subagents` 是一个社区 Codex Skill。它会根据仓库的真实
 结构、技术栈和项目约束，生成一组少量、持久、项目级的自定义子 agent，

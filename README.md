@@ -1,6 +1,17 @@
-# Generate Project Subagents
+<p align="center">
+  <img src="assets/project-subagents-logo.png" alt="Generate Project Subagents logo" width="220" />
+</p>
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+<h1 align="center">Generate Project Subagents</h1>
+
+<p align="center">
+  <strong>From project to agents.</strong><br />
+  从项目到 Agents，一步生成。
+</p>
+
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a>
+</p>
 
 `generate-project-subagents` is a community Codex Skill that turns the real
 structure and conventions of a repository into a small set of persistent,
