@@ -78,7 +78,26 @@ The Skill and validator have no third-party runtime dependencies.
 
 ## Installation
 
-### Option 1: clone directly into the Codex Skills directory
+### Option 1: ask Codex to install it from GitHub (recommended)
+
+Paste the following into a Codex chat:
+
+```text
+Use $skill-installer to install the Codex Skill from this public GitHub
+repository. The Skill is located at the repository root, where SKILL.md is:
+https://github.com/wanweiLab/generate-project-subagents
+```
+
+Codex will use its bundled Skill installer to download the repository and place
+the Skill in the appropriate user Skill directory. Approve the network and file
+operations if Codex asks. The newly installed Skill should be available on your
+next turn; restart Codex if it still does not appear.
+
+### Option 2: install manually with Git
+
+If `$skill-installer` is unavailable, clone the repository into a user Skill
+directory recognized by your Codex installation. For installations that use
+`~/.codex/skills`:
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -86,25 +105,16 @@ git clone https://github.com/wanweiLab/generate-project-subagents.git \
   ~/.codex/skills/generate-project-subagents
 ```
 
-The installed path must contain `SKILL.md` directly at its root:
-
-```text
-~/.codex/skills/generate-project-subagents/SKILL.md
-```
-
-Refresh or restart Codex if the Skill does not appear immediately.
-
-To update an existing installation:
+The installed directory must contain `SKILL.md` directly at its root. Keep
+`references/`, `scripts/`, and `agents/` with it because they are part of the
+Skill package. To update this Git-based installation:
 
 ```bash
 git -C ~/.codex/skills/generate-project-subagents pull --ff-only
 ```
 
-### Option 2: install from an existing checkout
-
-Clone the repository anywhere, then copy the repository directory to
-`~/.codex/skills/generate-project-subagents/`. Keep `SKILL.md`, `references/`,
-`scripts/`, and `agents/` together; they are all part of the Skill package.
+See the official [Build skills documentation](https://learn.chatgpt.com/docs/build-skills#install-curated-skills-for-local-use)
+for current Codex Skill installation and discovery guidance.
 
 ## Quick start
 
