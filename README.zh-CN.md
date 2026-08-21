@@ -78,7 +78,24 @@ Skill 和校验器没有第三方运行时依赖。
 
 ## 安装方式
 
-### 方式一：直接克隆到 Codex Skills 目录
+### 方式一：在 Codex 对话中从 GitHub 安装（推荐）
+
+把下面这段话直接发送给 Codex：
+
+```text
+使用 $skill-installer 安装下面这个公开 GitHub 仓库中的 Codex Skill。
+这个 Skill 位于仓库根目录，根目录直接包含 SKILL.md：
+https://github.com/wanweiLab/generate-project-subagents
+```
+
+Codex 会调用内置的 Skill 安装器下载仓库，并将 Skill 放入合适的用户 Skill
+目录。如果 Codex 请求网络或文件写入权限，请确认授权。安装完成后，Skill 应该
+从下一轮对话开始可用；如果仍未出现，请重启 Codex。
+
+### 方式二：使用 Git 手动安装
+
+如果当前环境没有 `$skill-installer`，可以把仓库克隆到当前 Codex 能识别的
+用户 Skill 目录。对于使用 `~/.codex/skills` 的安装环境：
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -86,25 +103,15 @@ git clone https://github.com/wanweiLab/generate-project-subagents.git \
   ~/.codex/skills/generate-project-subagents
 ```
 
-安装后的目录根部必须直接包含 `SKILL.md`：
-
-```text
-~/.codex/skills/generate-project-subagents/SKILL.md
-```
-
-如果 Skill 没有立即出现在 Codex 中，请刷新或重启 Codex。
-
-更新已有安装：
+安装后的目录根部必须直接包含 `SKILL.md`。请一起保留 `references/`、
+`scripts/` 和 `agents/`，它们都属于 Skill 包的一部分。更新这种 Git 安装：
 
 ```bash
 git -C ~/.codex/skills/generate-project-subagents pull --ff-only
 ```
 
-### 方式二：从已有代码目录安装
-
-也可以把仓库克隆到任意位置，再将整个仓库目录复制到
-`~/.codex/skills/generate-project-subagents/`。请一起保留 `SKILL.md`、
-`references/`、`scripts/` 和 `agents/`，它们都属于 Skill 包的一部分。
+当前 Codex Skill 的安装与发现规则，请参考官方
+[Build skills 文档](https://learn.chatgpt.com/docs/build-skills#install-curated-skills-for-local-use)。
 
 ## 快速开始
 
